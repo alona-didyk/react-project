@@ -1,4 +1,4 @@
-export default function TabButton({ children, onSelect }) {
+export default function TabButton({ children, onSelect, isSelected }) {
   return (
     <li>
       {/* use object destructuring to get access to the prop
@@ -6,7 +6,9 @@ export default function TabButton({ children, onSelect }) {
       onClick is a event listener for events in react
       the value should be a function
       */}
-      <button onClick={onSelect}>{children}</button>
+      <button className={isSelected ? "active" : undefined} onClick={onSelect}>
+        {children}
+      </button>
     </li>
   );
 }
